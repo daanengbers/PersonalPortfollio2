@@ -70,8 +70,10 @@ public class CharacterMovement : MonoBehaviour
             switch (state) 
             {
                 case State.normal:
-                   
-        rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
+                animator.SetBool("Rolling", false);
+
+
+                rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
 
 
                 //Dash
@@ -92,6 +94,8 @@ public class CharacterMovement : MonoBehaviour
                     break;
                 case State.rolling:
                     rb.velocity = rollDir * rollSpeed;
+                animator.SetFloat("Vertical", movement.y);
+                animator.SetBool("Rolling", true);
                     break;
             }
             
