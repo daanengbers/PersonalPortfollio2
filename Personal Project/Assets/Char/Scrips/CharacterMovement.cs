@@ -45,7 +45,7 @@ public class CharacterMovement : MonoBehaviour
 
                 moveDir = new Vector3(movement.x, movement.y).normalized;
 
-                Debug.Log(moveDir);
+                //Debug.Log(moveDir);
 
                 HandleDodgeRoll();
                 HandleDash();
